@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalissi - Cintura per Schiena</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .product-image {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: white;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 32px;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .features {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+
+        .feature {
+            margin-bottom: 10px;
+            padding: 5px 0;
+        }
+
+        .order-button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .order-button:hover {
+            background: #c0392b;
+        }
+
+        .guarantee {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            margin-bottom: 30px;
+            color: #155724;
+            font-weight: bold;
+        }
+
+        .payment-info {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .faq-section {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .faq-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .faq-question {
+            padding: 15px;
+            font-weight: bold;
+            background: #f1f1f1;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+        }
+
+        .form-section {
+            padding: 30px 20px;
+            background: #fff;
+        }
+
+        .form-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .submit-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: #218838;
+        }
+
+        @media (max-width: 600px) {
+            .product-image {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .order-button {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">JALISSI</div>
+        </div>
+
+        <div class="product-section">
+            <div class="product-image">
+                Cintura per Schiena<br>
+                Supporto Lombare
+            </div>
+
+            <div class="product-title">
+                Cintura Supporto Schiena Professionale
+            </div>
+
+            <div class="price">
+                <span class="old-price">€79,99</span>
+                €39,99
+            </div>
+
+            <div class="features">
+                <div class="feature">✓ Supporto lombare regolabile</div>
+                <div class="feature">✓ Materiale traspirante</div>
+                <div class="feature">✓ Riduce il dolore alla schiena</div>
+                <div class="feature">✓ Taglia universale</div>
+                <div class="feature">✓ Perfetta per lavoro e sport</div>
+                <div class="feature">✓ Spedizione gratuita</div>
+            </div>
+
+            <button class="order-button" onclick="scrollToForm()">
+                ORDINA ORA
+            </button>
+
+            <div class="guarantee">
+                ✓ Garanzia Soddisfatti o Rimborsati
+            </div>
+
+            <div class="payment-info">
+                Puoi pagare direttamente al momento della consegna a casa Tua!
+            </div>
+        </div>
+
+        <div class="form-section" id="orderForm">
+            <div class="form-title">Ordina Subito</div>
+            
+            <form onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label>Nome e Cognome *</label>
+                    <input type="text" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Telefono *</label>
+                    <input type="tel" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Indirizzo completo *</label>
+                    <textarea required rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Metodo di pagamento</label>
+                    <select>
+                        <option>Contrassegno (Pagamento alla consegna)</option>
+                        <option>Carta di credito</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    INVIA ORDINE
+                </button>
+            </form>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-title">Domande Frequenti</div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(1)">
+                    ✓ Ha una garanzia Soddisfatti o Rimborsati?
+                </div>
+                <div class="faq-answer" id="faq1">
+                    Sì ha una garanzia Soddisfatti o Rimborsati
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(2)">
+                    ✓ Posso pagare alla consegna?
+                </div>
+                <div class="faq-answer" id="faq2">
+                    Puoi pagare direttamente al momento della consegna a casa Tua!
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(3)">
+                    ✓ Quanto tempo ci vuole per la consegna?
+                </div>
+                <div class="faq-answer" id="faq3">
+                    Solitamente i tempi di consegna variano tra i 2 e i 3 giorni lavorativi. Non vanno considerati giorni lavorativi il sabato, la domenica e tutti i giorni rossi.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(4)">
+                    ✓ È disponibile nei negozi?
+                </div>
+                <div class="faq-answer" id="faq4">
+                    Il nostro prodotto è disponibile solo online. Basta compilare il modulo con i dati richiesti e sarà contattato da un nostro operatore.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(num) {
+            const faq = document.getElementById('faq' + num);
+            if (faq.style.display === 'none' || faq.style.display === '') {
+                faq.style.display = 'block';
+            } else {
+                faq.style.display = 'none';
+            }
+        }
+
+        function scrollToForm() {
+            document.getElementById('orderForm').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function submitOrder(event) {
+            event.preventDefault();
+            alert('Grazie per il tuo ordine! Sarai contattato da un nostro operatore entro 24 ore.');
+        }
+    </script>
+</body>
+</html>
