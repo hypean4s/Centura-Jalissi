@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jalissi - Cintura per Schiena</title>
+    <title>Jalissi - Cintura Supporto Lombare Professionale</title>
     <style>
         * {
             margin: 0;
@@ -12,207 +12,446 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             min-height: 100vh;
+            box-shadow: 0 0 50px rgba(0,0,0,0.1);
         }
 
         .header {
-            background: #fff;
-            padding: 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 25px;
             text-align: center;
-            border-bottom: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
+            font-size: 36px;
+            font-weight: 900;
+            color: #fff;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            color: #ecf0f1;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
         }
 
         .product-section {
-            padding: 30px 20px;
+            padding: 50px 20px;
             text-align: center;
-        }
-
-        .product-image {
-            width: 300px;
-            height: 300px;
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
             background: white;
         }
 
+        .product-showcase {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .product-image-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-image {
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image svg {
+            width: 280px;
+            height: 280px;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+        }
+
+        .product-details {
+            flex: 1;
+            text-align: left;
+            min-width: 300px;
+        }
+
         .product-title {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 32px;
+            font-weight: 800;
             margin-bottom: 20px;
-            color: #333;
+            color: #2c3e50;
+            line-height: 1.2;
+        }
+
+        .price-section {
+            margin-bottom: 30px;
         }
 
         .price {
-            font-size: 32px;
+            font-size: 42px;
             color: #e74c3c;
-            font-weight: bold;
-            margin-bottom: 30px;
+            font-weight: 900;
+            display: block;
         }
 
         .old-price {
             text-decoration: line-through;
-            color: #999;
-            font-size: 24px;
-            margin-right: 10px;
+            color: #95a5a6;
+            font-size: 28px;
+            margin-right: 15px;
+            font-weight: 400;
+        }
+
+        .discount-badge {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
 
         .features {
-            text-align: left;
-            max-width: 500px;
-            margin: 0 auto 30px;
+            margin-bottom: 30px;
         }
 
         .feature {
-            margin-bottom: 10px;
-            padding: 5px 0;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-icon {
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 18px;
         }
 
         .order-button {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             border: none;
-            padding: 20px 50px;
-            font-size: 24px;
+            padding: 20px 40px;
+            font-size: 22px;
             font-weight: bold;
             cursor: pointer;
-            margin-bottom: 30px;
+            border-radius: 50px;
             width: 100%;
             max-width: 400px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .order-button:hover {
-            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(231, 76, 60, 0.4);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .trust-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #27ae60;
         }
 
         .guarantee {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            padding: 15px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 30px 0;
             color: #155724;
             font-weight: bold;
-        }
-
-        .payment-info {
-            color: #666;
-            margin-bottom: 40px;
-        }
-
-        .faq-section {
-            background: #f8f9fa;
-            padding: 30px 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        .faq-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            border-radius: 15px;
             text-align: center;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            background: white;
-            border: 1px solid #ddd;
-        }
-
-        .faq-question {
-            padding: 15px;
-            font-weight: bold;
-            background: #f1f1f1;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .faq-answer {
-            padding: 15px;
-            display: none;
+            font-size: 18px;
         }
 
         .form-section {
-            padding: 30px 20px;
-            background: #fff;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
         .form-title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-align: center;
+            color: #2c3e50;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
             font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #74b9ff;
+            box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.1);
         }
 
         .submit-button {
-            background: #28a745;
+            background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 18px 30px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .submit-button:hover {
-            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4);
         }
 
-        @media (max-width: 600px) {
+        .faq-section {
+            background: white;
+            padding: 50px 20px;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #74b9ff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: bold;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-toggle {
+            font-size: 20px;
+            color: #74b9ff;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 200px;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .product-showcase {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .product-details {
+                text-align: center;
+            }
+            
             .product-image {
-                width: 250px;
-                height: 250px;
+                width: 280px;
+                height: 280px;
+            }
+            
+            .product-image svg {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 24px;
+            }
+            
+            .product-title {
+                font-size: 26px;
+            }
+            
+            .price {
+                font-size: 36px;
             }
             
             .order-button {
-                font-size: 20px;
-                padding: 15px 30px;
+                font-size: 18px;
+                padding: 16px 32px;
             }
         }
     </style>
@@ -221,126 +460,262 @@
     <div class="container">
         <div class="header">
             <div class="logo">JALISSI</div>
+            <div class="tagline">Soluzioni Professionali per il Benessere</div>
+        </div>
+
+        <div class="hero-section">
+            <div class="hero-title">Dimentica il Dolore alla Schiena</div>
+            <div class="hero-subtitle">Supporto lombare professionale per una vita senza dolore</div>
         </div>
 
         <div class="product-section">
-            <div class="product-image">
-                Cintura per Schiena<br>
-                Supporto Lombare
+            <div class="product-showcase">
+                <div class="product-image-container">
+                    <div class="product-image">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Back support belt illustration -->
+                            <defs>
+                                <linearGradient id="beltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="supportGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Main belt body -->
+                            <ellipse cx="150" cy="150" rx="120" ry="80" fill="url(#beltGradient)" filter="url(#shadow)"/>
+                            
+                            <!-- Lumbar support pad -->
+                            <rect x="90" y="120" width="120" height="60" rx="30" fill="url(#supportGradient)" filter="url(#shadow)"/>
+                            
+                            <!-- Support ribs -->
+                            <rect x="100" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            <rect x="115" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            <rect x="130" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            <rect x="145" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            <rect x="160" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            <rect x="175" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            <rect x="190" y="130" width="8" height="40" rx="4" fill="#1abc9c"/>
+                            
+                            <!-- Velcro straps -->
+                            <rect x="30" y="135" width="40" height="30" rx="15" fill="#e74c3c" filter="url(#shadow)"/>
+                            <rect x="230" y="135" width="40" height="30" rx="15" fill="#e74c3c" filter="url(#shadow)"/>
+                            
+                            <!-- Adjustment buckles -->
+                            <rect x="35" y="140" width="30" height="20" rx="3" fill="#f39c12"/>
+                            <rect x="235" y="140" width="30" height="20" rx="3" fill="#f39c12"/>
+                            
+                            <!-- Mesh texture lines -->
+                            <g opacity="0.3">
+                                <line x1="95" y1="125" x2="205" y2="125" stroke="#ecf0f1" stroke-width="1"/>
+                                <line x1="95" y1="135" x2="205" y2="135" stroke="#ecf0f1" stroke-width="1"/>
+                                <line x1="95" y1="145" x2="205" y2="145" stroke="#ecf0f1" stroke-width="1"/>
+                                <line x1="95" y1="155" x2="205" y2="155" stroke="#ecf0f1" stroke-width="1"/>
+                                <line x1="95" y1="165" x2="205" y2="165" stroke="#ecf0f1" stroke-width="1"/>
+                                <line x1="95" y1="175" x2="205" y2="175" stroke="#ecf0f1" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Brand logo on belt -->
+                            <circle cx="150" cy="150" r="15" fill="#fff" opacity="0.9"/>
+                            <text x="150" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#2c3e50">J</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="product-details">
+                    <div class="product-title">
+                        Cintura Supporto Lombare<br>
+                        <span style="color: #74b9ff;">Professionale</span>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">
+                            <span class="old-price">€79,99</span>
+                            €39,99
+                        </div>
+                        <div class="discount-badge">🔥 SCONTO 50%</div>
+                    </div>
+
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            Supporto lombare regolabile con 7 stecche
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            Materiale traspirante e antibatterico
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            Riduce il dolore fino al 85%
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            Taglia universale (70-120cm)
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            Certificazione medica europea
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✓</span>
+                            Spedizione gratuita in 24-48h
+                        </div>
+                    </div>
+
+                    <button class="order-button" onclick="scrollToForm()">
+                        ORDINA ORA - PAGHI ALLA CONSEGNA
+                    </button>
+                </div>
             </div>
 
-            <div class="product-title">
-                Cintura Supporto Schiena Professionale
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-icon">🛡️</div>
+                    <div>
+                        <strong>Garanzia</strong><br>
+                        30 giorni
+                    </div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-icon">🚚</div>
+                    <div>
+                        <strong>Spedizione</strong><br>
+                        Gratuita
+                    </div>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-icon">💳</div>
+                    <div>
+                        <strong>Pagamento</strong><br>
+                        Alla consegna
+                    </div>
+                </div>
             </div>
-
-            <div class="price">
-                <span class="old-price">€79,99</span>
-                €39,99
-            </div>
-
-            <div class="features">
-                <div class="feature">✓ Supporto lombare regolabile</div>
-                <div class="feature">✓ Materiale traspirante</div>
-                <div class="feature">✓ Riduce il dolore alla schiena</div>
-                <div class="feature">✓ Taglia universale</div>
-                <div class="feature">✓ Perfetta per lavoro e sport</div>
-                <div class="feature">✓ Spedizione gratuita</div>
-            </div>
-
-            <button class="order-button" onclick="scrollToForm()">
-                ORDINA ORA
-            </button>
 
             <div class="guarantee">
-                ✓ Garanzia Soddisfatti o Rimborsati
-            </div>
-
-            <div class="payment-info">
-                Puoi pagare direttamente al momento della consegna a casa Tua!
+                🛡️ GARANZIA SODDISFATTI O RIMBORSATI 100%
             </div>
         </div>
 
         <div class="form-section" id="orderForm">
-            <div class="form-title">Ordina Subito</div>
-            
-            <form onsubmit="submitOrder(event)">
-                <div class="form-group">
-                    <label>Nome e Cognome *</label>
-                    <input type="text" required>
-                </div>
+            <div class="form-container">
+                <div class="form-title">Ordina la Tua Cintura Ora</div>
                 
-                <div class="form-group">
-                    <label>Telefono *</label>
-                    <input type="tel" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Indirizzo completo *</label>
-                    <textarea required rows="3"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Metodo di pagamento</label>
-                    <select>
-                        <option>Contrassegno (Pagamento alla consegna)</option>
-                        <option>Carta di credito</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="submit-button">
-                    INVIA ORDINE
-                </button>
-            </form>
+                <form onsubmit="submitOrder(event)">
+                    <div class="form-group">
+                        <label>Nome e Cognome *</label>
+                        <input type="text" required placeholder="Inserisci nome e cognome">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Numero di Telefono *</label>
+                        <input type="tel" required placeholder="Inserisci il tuo numero">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Indirizzo Completo di Consegna *</label>
+                        <textarea required rows="3" placeholder="Via, numero civico, città, CAP, provincia"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Metodo di Pagamento</label>
+                        <select>
+                            <option>💳 Contrassegno (Pagamento alla consegna)</option>
+                            <option>💳 Carta di credito/debito</option>
+                            <option>💳 PayPal</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">
+                        CONFERMA ORDINE
+                    </button>
+                </form>
+            </div>
         </div>
 
         <div class="faq-section">
-            <div class="faq-title">Domande Frequenti</div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(1)">
-                    ✓ Ha una garanzia Soddisfatti o Rimborsati?
+            <div class="faq-container">
+                <div class="faq-title">Domande Frequenti</div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(1)">
+                        <span>Ha davvero una garanzia Soddisfatti o Rimborsati?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq1">
+                        Sì, offriamo una garanzia completa di 30 giorni. Se non sei soddisfatto del prodotto, puoi restituirlo e ricevere un rimborso completo senza domande.
+                    </div>
                 </div>
-                <div class="faq-answer" id="faq1">
-                    Sì ha una garanzia Soddisfatti o Rimborsati
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(2)">
-                    ✓ Posso pagare alla consegna?
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(2)">
+                        <span>Posso davvero pagare alla consegna?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq2">
+                        Assolutamente sì! Puoi pagare direttamente al corriere al momento della consegna. Accettiamo contanti o carta di credito/debito.
+                    </div>
                 </div>
-                <div class="faq-answer" id="faq2">
-                    Puoi pagare direttamente al momento della consegna a casa Tua!
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(3)">
-                    ✓ Quanto tempo ci vuole per la consegna?
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(3)">
+                        <span>Quanto tempo ci vuole per la consegna?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq3">
+                        La consegna avviene in 24-48 ore lavorative per la maggior parte delle città italiane. Per aree più remote potrebbero essere necessari 2-3 giorni lavorativi.
+                    </div>
                 </div>
-                <div class="faq-answer" id="faq3">
-                    Solitamente i tempi di consegna variano tra i 2 e i 3 giorni lavorativi. Non vanno considerati giorni lavorativi il sabato, la domenica e tutti i giorni rossi.
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(4)">
-                    ✓ È disponibile nei negozi?
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(4)">
+                        <span>È disponibile nei negozi fisici?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq4">
+                        No, per garantire il miglior prezzo possibile vendiamo esclusivamente online. Questo ci permette di offrire un prodotto di qualità professionale a metà prezzo.
+                    </div>
                 </div>
-                <div class="faq-answer" id="faq4">
-                    Il nostro prodotto è disponibile solo online. Basta compilare il modulo con i dati richiesti e sarà contattato da un nostro operatore.
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(5)">
+                        <span>È adatta per ogni tipo di corporatura?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer" id="faq5">
+                        Sì, la cintura è regolabile e si adatta a circonferenze da 70cm a 120cm. Il sistema di regolazione permette un adattamento perfetto per ogni corporatura.
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Jalissi. Tutti i diritti riservati. | Prodotto con certificazione CE</p>
         </div>
     </div>
 
     <script>
         function toggleFaq(num) {
-            const faq = document.getElementById('faq' + num);
-            if (faq.style.display === 'none' || faq.style.display === '') {
-                faq.style.display = 'block';
-            } else {
-                faq.style.display = 'none';
+            const item = document.querySelector(`.faq-item:nth-child(${num})`);
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-toggle').textContent = '+';
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-toggle').textContent = '×';
             }
         }
 
@@ -352,8 +727,31 @@
 
         function submitOrder(event) {
             event.preventDefault();
-            alert('Grazie per il tuo ordine! Sarai contattato da un nostro operatore entro 24 ore.');
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = event.target.querySelector('input[type="text"]').value;
+            
+            // Show success message
+            alert(`Grazie ${name}! 🎉\n\nIl tuo ordine è stato ricevuto con successo.\nSarai contattato dal nostro team entro 2 ore per confermare i dettagli della consegna.\n\n📞 Tieni il telefono a portata di mano!`);
+            
+            // Optional: Reset form
+            event.target.reset();
         }
+
+        // Add smooth scroll behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation to product image
+            const productImage = document.querySelector('.product-image');
+            productImage.style.opacity = '0';
+            productImage.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                productImage.style.transition = 'all 1s ease';
+                productImage.style.opacity = '1';
+                productImage.style.transform = 'scale(1)';
+            }, 500);
+        });
     </script>
 </body>
 </html>
